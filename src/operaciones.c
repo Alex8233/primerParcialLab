@@ -208,9 +208,9 @@ void censistaMaximo(eCensista censistas[],int tamCensista,eVivienda viviendas[],
 		{
 			contadorJuan=contadorJuan +1;
 		}
-		if(censistas[0].legajoCensista == viviendas[i].legajoCensista)
+		if(censistas[2].legajoCensista == viviendas[i].legajoCensista)
 		{
-			contadorAna=contadorAna +1;
+			contadorSol=contadorSol +1;
 		}
 	}
 	if(contadorAna > contadorJuan && contadorAna > contadorSol)
