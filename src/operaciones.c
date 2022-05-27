@@ -156,15 +156,76 @@ void mostrarVivienda(eVivienda viviendas[],eTipo tipos[],eCensista censistas[],i
 			}
 		}
 }
-void mostrarCensista(eCensista censistas[],int tam)
+void mostrarCensista(eCensista censistas[],int tam, eVivienda viviendas[],eTipo tipos[],int tamVivienda,int tamTipo)
 {
 
 	if(censistas != NULL && tam>0)
 	{
 		printf("\nLegajo\t Nombre\t  Edad\t Numero de telefono\n");
-		for(int i = 0; i < tam; i++)
+		for(int k = 0; k < tam; k++)
 		{
-			printf("%-8d %-8s %-6d %s\n", censistas[i].legajoCensista, censistas[i].nombre, censistas[i].edad, censistas[i].tenefono);
+			printf("\n%-8d %-8s %-6d %s\n", censistas[k].legajoCensista, censistas[k].nombre, censistas[k].edad, censistas[k].tenefono);
+			printf("\nCalle\t\t ID\t Cantidad de Personas  Cantidad de Habitaciones  Tipo de Vivienda\n");
+
+			for (int i = 0; i < tamVivienda; i++)
+			{
+				if(censistas[k].legajoCensista == viviendas[i].legajoCensista)
+				{
+					if(viviendas[i].idVivienda >= 20000)
+					{
+
+
+						for(int y = 0; y < tamTipo; y++)
+						{
+							if(tipos[i].vivienda == tipos[y].vivienda)
+							{
+								printf("%-16s %-7d %-21d %-25d %-17d\n",viviendas[i].calle, viviendas[i].idVivienda, viviendas[i].personas,viviendas[i].habitaciones, tipos[y].vivienda);
+								break;
+							}
+						}
+						break;
+
+
+					}
+				}
+			}
+		}
+	}
+
+}
+void censistaMaximo(eCensista censistas[],int tamCensista,eVivienda viviendas[],int tamVivienda)
+{
+	int contadorAna=0;
+	int contadorJuan =0;
+	int contadorSol=0;
+	for(int i=0;i<tamVivienda;i++)
+	{
+		if(censistas[0].legajoCensista == viviendas[i].legajoCensista)
+		{
+			contadorAna=contadorAna +1;
+		}
+		if(censistas[1].legajoCensista == viviendas[i].legajoCensista)
+		{
+			contadorJuan=contadorJuan +1;
+		}
+		if(censistas[0].legajoCensista == viviendas[i].legajoCensista)
+		{
+			contadorAna=contadorAna +1;
+		}
+	}
+	if(contadorAna > contadorJuan && contadorAna > contadorSol)
+	{
+		printf("Ana censista con más censos realizados");
+	}
+	else
+	{
+		if(contadorJuan > contadorSol)
+		{
+			printf("Juan censista con más censos realizados");
+		}
+		else
+		{
+			printf("Sol censista con más censos realizados");
 		}
 	}
 }

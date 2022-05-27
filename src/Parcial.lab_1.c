@@ -173,16 +173,33 @@ int main(void) {
 				}
 				break;
 			case 5:
+				if(contadorViviendas >0)
+				{
+					if(ordenarVivienda(viviendas,TAMVIVIENDA) == 0)
+					{
+						mostrarCensista(censistas,TAMCENSISTAS,viviendas,tipos,TAMVIVIENDA,TAMTIPO);
+					}
+					else
+					{
+						printf("\nERROR AL ORDENAR");
+					}
 
-					mostrarCensista(censistas,TAMCENSISTAS);
 
+				}
 				break;
 			case 6:
-				printf("\nGracias por usar nuestros servicios.");
+				if(contadorViviendas >0)
+				{
+					censistaMaximo(censistas,TAMCENSISTAS,viviendas,TAMVIVIENDA);
+				}
+
+				break;
+			case 7:
+				printf("Salir");
 				break;
 			default:
 				printf("\nLA OPCION NO EXISTE!!!");
 		}
-	}while(opcion !=6);
+	}while(opcion !=7);
 	return EXIT_SUCCESS;
 }

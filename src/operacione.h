@@ -114,4 +114,14 @@ void mostrarVivienda(eVivienda viviendas[],eTipo tipos[],eCensista censistas[],i
 /// \post
 /// \param censistas
 /// \param tam
-void mostrarCensista(eCensista censistas[],int tam);
+void mostrarCensista(eCensista censistas[],int tam, eVivienda viviendas[],eTipo tipos[],int tamVivienda,int tamTipo);
+/// \fn void censistaMaximo(eCensista[], int, eVivienda[], int)
+/// \brief
+///
+/// \pre
+/// \post
+/// \param censistas
+/// \param tamCensista
+/// \param viviendas
+/// \param tamVivienda
+void censistaMaximo(eCensista censistas[],int tamCensista,eVivienda viviendas[],int tamVivienda);

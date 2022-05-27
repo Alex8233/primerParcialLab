@@ -20,7 +20,8 @@ void menu(int* opcion)
 			"3. Baja vivienda\n"
 			"4. Listar viviendas\n"
 			"5. Listar censistas\n"
-			"6. Salir:\n"
+			"6. Censista con mas censos realizados:\n"
+			"7. salir:\n"
 			"Ingrese la opcion deseada:");
 	scanf("%d", opcion);
 }
